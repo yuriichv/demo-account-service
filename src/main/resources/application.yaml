@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:9998}
+
+spring:
+  application:
+    name: accountService
+
+  zipkin:
+    baseUrl: ${ZIPKIN:http://localhost:9411/}
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}    #none, update, create, create-drop
+  datasource:
+#    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#    url: jdbc:p6spy:mysql://localhost:3306/demo
+    url: ${DB_URL:jdbc:mysql://localhost:3306/demo}
+    username: ${DB_USER:demo}
+    password: ${db_PASSWORD:demo}
+
